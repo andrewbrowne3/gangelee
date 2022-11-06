@@ -1,0 +1,12 @@
+<Center>
+<H1>Formulation Code: {{formulation.Code}}</H1>
+<H2>Batch Weight: {{formulation.Total_Formation_Weight}} grams</H2>
+
+
+
+{% for i in formulation.Raw_Materials.all %}
+<h3><li>Raw material: {{i.Name}} <br>
+     Raw material code: {{i.Code}}
+</li></h3>
+{% endfor %}
+</Center>
