@@ -33,8 +33,14 @@ class Formulation(models.Model):
     instruction_id = models.OneToOneField('Instruction', on_delete=models.PROTECT,blank=True,null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,primary_key=True,editable=False)
     Product =models.ForeignKey('Product',on_delete=models.CASCADE,blank=True,null=True)
+
+    def actual_weight(self):
+        return (float(0.01) * float(self.percentage_weight)) * float(self.Total_Formation_Weight)
+
     def __str__(self):
         return f'{self.Code}'
+
+    
 
 class Raw_Materials(models.Model):
     Name = models.CharField(max_length=200)

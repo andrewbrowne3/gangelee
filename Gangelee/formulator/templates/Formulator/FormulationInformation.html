@@ -1,14 +1,33 @@
+<html>
+     <head>
+          <title>G angelee Formulator</title>
+     </head>
+ <body>
+     
+  
+{% load mathfilters %}
 <Center>
 <H1>Formulation Code: {{formulation.Code}}</H1>
-<H2>Batch Weight: {{formulation.Total_Formation_Weight}} grams</H2>
+<H2>Batch Weight: {{formulation.Total_Formation_Weight}}</H2>
 
 
 
 {% for i in formulation.Raw_Materials.all %}
 <h3><li>Raw material: {{i.Name}} <br>
-     Raw material code: {{i.Code}}
+     Raw material code: {{i.Code}} <br>
+     Weight of material {{formulation.actual_weight}}
+
 </li></h3>
 {% endfor %}
+<br>
+<!-- Use code below to iterate through list items and check if they exist, if they exist put their code and weight
+{% for i in formulation.Raw_Materials.all %}
+     {% if i %}
+     <h1>hello</h1>
+     {% else %}
+     <h2>goodbye</h2>
+     {% endif %}
+     {% endfor %} -->
 
 <h1>Instructions</h1>
 {% for i in Instructions %}
@@ -19,3 +38,5 @@
 
 {% endfor %}
 </Center>
+</body>   
+</html>

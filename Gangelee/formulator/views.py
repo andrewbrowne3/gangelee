@@ -17,8 +17,9 @@ def ProductInformation(request, pk):
 
 def FormulationInformation(request, pk):
     FormulationObject = Formulation.objects.get(id=pk)
+    test = 100
     Raw_Materials = FormulationObject.Raw_Materials.all()
     InstructionObj = Instruction.objects.filter(formulation_field=FormulationObject)
    # IngredientObj = Ingredient.objects.filter(formulation=FormulationObject)
-    context = {'formulation':FormulationObject, 'Instructions':InstructionObj}
+    context = {'formulation':FormulationObject, 'Instructions':InstructionObj, 'test':test}
     return render(request, 'Formulator/FormulationInformation.html',context)
