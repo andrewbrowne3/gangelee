@@ -9,4 +9,13 @@
      Raw material code: {{i.Code}}
 </li></h3>
 {% endfor %}
+
+<h1>Instructions</h1>
+{% for i in Instructions %}
+<p>{{i.instructions}}</p>
+
+<h2>Special notes</h2>
+<p>{{i.special_notes}}</p>
+
+{% endfor %}
 </Center>

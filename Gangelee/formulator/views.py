@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product, Formulation, Raw_Materials
+from .models import Product, Formulation, Raw_Materials, Instruction
 # Create your views here.
 
 
@@ -18,6 +18,7 @@ def ProductInformation(request, pk):
 def FormulationInformation(request, pk):
     FormulationObject = Formulation.objects.get(id=pk)
     Raw_Materials = FormulationObject.Raw_Materials.all()
+    InstructionObj = Instruction.objects.filter(formulation_field=FormulationObject)
    # IngredientObj = Ingredient.objects.filter(formulation=FormulationObject)
-    context = {'formulation':FormulationObject}
+    context = {'formulation':FormulationObject, 'Instructions':InstructionObj}
     return render(request, 'Formulator/FormulationInformation.html',context)

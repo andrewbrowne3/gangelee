@@ -40,6 +40,7 @@ class Raw_Materials(models.Model):
     Name = models.CharField(max_length=200)
     Purpose = models.CharField(max_length=200)
     #Formulation = models.ForeignKey(Formulation,on_delete=models.CASCADE,blank=True, null=True)
+    #she wants the code to have integers and letters because she wants to put the type of material it is like s for surfectant 
     Code = models.IntegerField(max_length=20, unique=True, blank=True,null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,primary_key=True,editable=False)
 
