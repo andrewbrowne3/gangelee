@@ -1,10 +1,13 @@
+{% extends 'main.html' %}
+{% load static %}
 <html>
      <head>
           <title>G angelee Formulator</title>
      </head>
  <body>
      
-  
+     {% block content %}    
+     <br><br><br>
 {% load mathfilters %}
 <Center>
 <H1>Formulation Code: {{formulation.Code}}</H1>
@@ -38,5 +41,6 @@
 
 {% endfor %}
 </Center>
+{% endblock content %}
 </body>   
 </html>

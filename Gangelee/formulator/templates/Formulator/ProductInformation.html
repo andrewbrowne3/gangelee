@@ -1,24 +1,32 @@
+{% extends 'main.html' %}
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href='{% static "styles/test.css" %}'>
 </head>
-<body style="background-color: pink;">
-    
-</body>
-</html>
+<body>
+{% block content %}
+<br><br><br>
+
+
 <center>
-<h1 style="color: purple;">{{product.Name}}</h1>
+<h1 >{{product.Name}}</h1>
 
 
-<h2 style="color: purple;">Type of product: {{product.Type}}</h2>
+<h2>Type of product: {{product.Type}}</h2>
 
-<h3 style="color: purple;">List of formulations</h3>
+<h3 >List of formulations</h3>
 {% for i in formulation %} 
 <table>
-<li style="color: purple;"> Formulation code: <a href="{% url 'formulationpage' i.id %}">{{i.Code}}</a></li>
+<li> Formulation code: <a href="{% url 'formulationpage' i.id %}">{{i.Code}}</a></li>
 </table>
 {% endfor %}
 </center>
+{% endblock content %}
+</body>
+</html>
