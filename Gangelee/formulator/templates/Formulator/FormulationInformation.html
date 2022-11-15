@@ -10,19 +10,32 @@
      <br><br><br>
 {% load mathfilters %}
 <Center>
-<H1>Formulation Code: {{formulation.Code}}</H1>
-<H2>Batch Weight: {{formulation.Total_Formation_Weight}}</H2>
+     <table class="table">
+          <tr class="table">
+<th class="table">Formulation Code:</th>
 
 
-
+<th class="table">Batch Weight:</th>
+<tr class="table">
+<td class="table">{{formulation.Total_Formation_Weight}}</td>
+<td class="table">{{formulation.Code}}</td>
+</tr>
+</tr>
+<tr class="table">
+<th class="table">Raw material Name</th>
+<th class="table">  Raw material Code</th>
+<th class="table">Weight of material </th>
+</tr>
 {% for i in formulation.Raw_Materials.all %}
-<h3><li>Raw material: {{i.Name}} <br>
-     Raw material code: {{i.Code}} <br>
-     Weight of material {{formulation.actual_weight}}
-
-</li></h3>
-{% endfor %}
+<tr class="table">
+<td class="table">{{i.Name}} </td>
 <br>
+   <td class="table">{{i.Code}} </td> 
+    <td class="table">{{formulation.actual_weight}}</td> 
+{% endfor %}
+</tr>
+</table>
+<br><br><br>
 <!-- Use code below to iterate through list items and check if they exist, if they exist put their code and weight
 {% for i in formulation.Raw_Materials.all %}
      {% if i %}

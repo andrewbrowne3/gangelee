@@ -5,6 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -202,7 +203,7 @@ svg {
 }
 
 table {
-  border-collapse: collapse;
+  size: 40 px;
 }
 
 caption {
@@ -1532,10 +1533,15 @@ pre code {
 }
 
 .table {
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #555555;
+ size: 800;
 }
+
+.table th,
+.table td, 
+.table tr {
+  border: 4px;
+}
+
 
 .table th,
 .table td {
@@ -10144,3 +10150,8 @@ h6,
     border-right: none !important;
   }
 }
+
+.table{
+  size: 600px !important;
+ }
+ 

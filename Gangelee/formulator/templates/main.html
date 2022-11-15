@@ -2,6 +2,7 @@
 <html lang="en" style="color:aqua;">
 {% load static %}
 <head>
+    {% block headtag %}
     <meta charset="utf-8">
     <title>iCREAM - Ice Cream Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -24,6 +25,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href='{% static "styles/css/style.css"%}' rel="stylesheet">
+    <link href='{% static "styles/test.css"%}' rel="stylesheet">
+
+    {% endblock headtag %}
 </head>
 
 <body>

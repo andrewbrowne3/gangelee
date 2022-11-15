@@ -1,3 +1,7 @@
-h1{color: aqua;
-
+#tablee{ 
+    size: 500px !important;
 }
+
+#test {
+ border: 5px;
+};
